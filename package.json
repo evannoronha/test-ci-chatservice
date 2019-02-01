@@ -10,7 +10,9 @@
     "express": "^4.14.0",
     "mysql": "^2.11.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "newman": "^4.3.1"
+  },
   "scripts": {
     "build-db": "docker build -t chatservice-mysql Database/",
     "init-db": "docker run -d -p 3306:3306 --name my-mysql chatservice-mysql && Database/waitForContainerSetup.sh",
