@@ -14,6 +14,7 @@
   "scripts": {
     "build-db": "docker build -t chatservice-mysql Database/",
     "init-db": "docker run -d -p 3306:3306 --name my-mysql chatservice-mysql && Database/waitForContainerSetup.sh",
+    "kill-db": "docker stop my-mysql && docker rm my-mysql",
     "test": "node main.js",
     "start": "node main.js"
   },
