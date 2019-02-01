@@ -1,0 +1,15 @@
+language: node_js
+
+cache:
+   - npm
+
+node_js:
+   - "7"
+
+before_install:
+   - sudo service mysql stop # we want to run our mysql on 3306
+   - npm run build-db
+   - npm run init-db
+
+script:
+   - npm start & npm test

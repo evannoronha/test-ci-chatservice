@@ -1,6 +1,10 @@
-drop database if exists cstaley;
-create database cstaley;
-use cstaley;
+CREATE USER 'ChatService'@'%' IDENTIFIED BY 'mylamepassword';
+GRANT ALL PRIVILEGES ON * . * TO 'ChatService'@'%';
+FLUSH PRIVILEGES;
+
+drop database if exists ChatService;
+create database ChatService;
+use ChatService;
 
 create table Person (
    id int auto_increment primary key,
